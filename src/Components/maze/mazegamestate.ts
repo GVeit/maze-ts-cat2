@@ -51,7 +51,7 @@ export class MazeGameState {
   
   
   
-      this.board = new MazeGenerator(this.width, this.height, this.start, this.end).board;
+      this.board = new MazeGenerator(this.width, this.height).board;
     }
 
     
@@ -65,6 +65,7 @@ export class MazeGameState {
     }
   
     isCheckpointCell(cell){
+      /*
       if (this.checkpoint1.x === cell.x && this.checkpoint1.y === cell.y) {
         console.log("At the checkpoint1");
         console.log("1 x :" + this.checkpoint1.x + " y :" + this.checkpoint1.y);
@@ -108,6 +109,7 @@ export class MazeGameState {
       const messageArea = document.getElementById("messageArea") as HTMLDivElement;
       messageArea.innerHTML = "";
       return false;
+      */
     }
   
     isEndCell(cell) {

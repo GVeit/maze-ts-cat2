@@ -27,7 +27,7 @@ export class MazeUi {
       }
   
       // TODO: don't use jQuery here
-      this.options = $.extend({}, defaultOptions, options);
+      //this.options = $.extend({}, defaultOptions, options);
     }
   
     update() {
@@ -41,19 +41,21 @@ export class MazeUi {
 
     
     center() {
-      let $body = $('body');
-      this.canvas.width = $body.width();
-      this.canvas.height = $body.height();
+      //let $body = $('body');
+      //this.canvas.width = $body.width();
+      //this.canvas.height = $body.height();
   
       this.options.offset.x = Math.floor((this.canvas.width / 2) - (this.state.width * this.options.scale / 2));
       this.options.offset.y = Math.floor((this.canvas.height / 2) - (this.state.height * this.options.scale / 2));
-      $("#a").width(this.state.width * this.options.scale + 3).css('padding-top', (this.canvas.height / 2) - (this.state.height * this.options.scale / 2));
+      //$("#a").width(this.state.width * this.options.scale + 3).css('padding-top', (this.canvas.height / 2) - (this.state.height * this.options.scale / 2));
 
+      /*
       if(typeof $ !== 'undefined') {
         console.log("Undefined");
       }
+      */
       //$("#a").width(this.state.width * this.options.scale + 3).css('padding-top', (this.canvas.height / 2) - (this.state.height * this.options.scale / 2) - $('h1').height());
-      $("#time, #steps").css('margin-top', this.state.height * this.options.scale);
+      //$("#time, #steps").css('margin-top', this.state.height * this.options.scale);
       this.update();
     }
     
@@ -62,12 +64,12 @@ export class MazeUi {
     }
   
     drawSteps() {
-      $("#steps").html(this.state.numSteps + " step" + (App.steps !== 1 ? "s" : ""));
+      //$("#steps").html(this.state.numSteps + " step" + (App.steps !== 1 ? "s" : ""));
     }
   
     drawTimer() {
       let playTimeSeconds = Math.floor((this.state.playTime || 0) / 1000)
-      $("#time").html(playTimeSeconds + " second" + (playTimeSeconds !== 1 ? "s" : ""));
+      //$("#time").html(playTimeSeconds + " second" + (playTimeSeconds !== 1 ? "s" : ""));
     }
   
     drawPath() {

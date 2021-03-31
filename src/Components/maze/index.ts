@@ -56,9 +56,11 @@ export class MazeGame {
               alert("Need to get all keys before exit the game");
             }*/
           }
+          /*
           if (this.state.isCheckpointCell(newPos)) {
             console.log("On Checkpoint");
           }
+          */
         }
       }
     }

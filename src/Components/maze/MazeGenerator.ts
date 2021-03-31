@@ -1,7 +1,7 @@
 import React from 'react'
 import { Rand } from './random'
 import { Cell } from './cell'
-import { MazeGame } from './mazegame'
+import { MazeGame } from '.'
 
 
   /* Generate the maze using recursive backtracking.
