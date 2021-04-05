@@ -4,19 +4,15 @@ import { MazeUi } from './mazeui'
 
 
 
-export class MazeGame {
+class MazeGame extends React.Component {
     offsets: { left: { x: number; y: number; }; up: { x: number; y: number; }; right: { x: number; y: number; }; down: { x: number; y: number; }; };
     options: any;
-    state: MazeGameState;
-    ui: MazeUi;
+    state: MazeGameState | undefined;
+    ui: MazeUi | undefined;
+
     constructor(canvas, options) {
-      let defaultOptions = {
-        ui: {},
-        startPosition: { x: 0, y: 0 },
-        checkpointPosition: { x: 2, y: 2},
-        dimensions: [7, 7]
-      }
   
+      super(canvas, options);
       this.offsets = {
         "left"  : { x: -1, y: 0 },
         "up"  : { x: 0, y:  -1 },
@@ -26,9 +22,9 @@ export class MazeGame {
   
       //this.options = $.extend({}, defaultOptions, options);
   
-      this.state = new MazeGameState(this.options.dimensions, this.options.startPosition);
-      this.ui = new MazeUi(this.state, options.ui, canvas);
-      this.ui.center();
+      //this.state = new MazeGameState(this.options.dimensions, this.options.startPosition);
+      //this.ui = new MazeUi(this.state, options.ui, canvas);
+      //this.ui.center();
   
       this.start();
     }
@@ -76,3 +72,6 @@ export class MazeGame {
       */
     }
   }
+
+
+export default MazeGame;

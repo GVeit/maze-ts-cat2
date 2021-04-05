@@ -5,9 +5,9 @@ import Maze from '../Maze'
 class Game extends React.Component {
 
     render() {
-        <div className="game">
-            <Maze/>
-        </div>
+        return (
+            <div className="mazeGame">  <Maze state={undefined} /> </div>
+        )
     }
 }
 
