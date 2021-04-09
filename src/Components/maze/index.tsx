@@ -1,6 +1,7 @@
 import React from 'react'
 import { MazeGameState } from './mazegamestate'
 import { MazeUi } from './mazeui'
+import App from '../../App';
 
 
 
@@ -62,6 +63,7 @@ class MazeGame extends React.Component {
     }
   
     onGameEnd() {
+      // eslint-disable-next-line react/no-direct-mutation-state
       this.state.gameInProgress = false;
       /*clearInterval(App.timer);
       //App.center($("#options").show());
@@ -71,6 +73,59 @@ class MazeGame extends React.Component {
       key3 = false;
       */
     }
+    
+    render() {
+
+          function startTick() {
+          if (App.timer) {
+              clearInterval(App.timer);
+          }
+          App.timer = setInterval(tick, 100);
+          }
+
+          function tick() {
+          App.mazeGame.ui.drawTimer();
+          }
+
+          function pass_function(){
+          alert('42');
+          }
+          
+
+          return (
+              <>
+              <div className="grid-container">
+                  <canvas id="maze">Sorry your browser doesn't support the canvas element. Try upgrading your browser.</canvas>
+                  <div id="messageArea"></div>
+                  <div className="a">
+                      <div id="time"></div>
+                      <div id="steps"></div>
+                      <h1><span> <a href="#options"></a></span></h1>
+                  </div>
+
+                  <div className="options">
+                      <form>
+                      <label htmlFor="w">Width</label>
+                      <label htmlFor="h">Height</label>
+                      <input id="w" type="number" min="2" step="1" defaultValue="7" />
+                      by
+                      <input id="h" type="number" min="2" step="1" defaultValue="7" />
+                      <button type="submit">Generate New Maze</button>
+                      </form>
+                  </div>
+              </div>
+              </>
+          );
+      }
+
+      componentDidMount() {
+          
+      }
+
+      componentWillUnmount() {
+
+      }
+
   }
 
 
