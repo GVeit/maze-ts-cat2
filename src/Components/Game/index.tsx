@@ -1,5 +1,5 @@
 import React from 'react'
-import Maze from '../Maze'
+import MazeGame from '../Maze';
 
 
 export default function Game() {

@@ -93,6 +93,8 @@ class MazeGame extends React.Component {
           
 
           return (
+            <canvas id="maze">Sorry your browser doesn't support the canvas element. Try upgrading your browser.</canvas>
+            /*
               <>
               <div className="grid-container">
                   <canvas id="maze">Sorry your browser doesn't support the canvas element. Try upgrading your browser.</canvas>
@@ -115,6 +117,7 @@ class MazeGame extends React.Component {
                   </div>
               </div>
               </>
+            */
           );
       }
 
